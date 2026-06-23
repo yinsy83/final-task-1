@@ -1,0 +1,32 @@
+name: gen3d
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - pip
+  - git
+  - cmake
+  - ninja
+  - pytorch
+  - torchvision
+  - torchaudio
+  - pytorch-cuda=12.4
+  - pip:
+      - packaging
+      - opencv-python-headless==4.10.0.84
+      - rembg
+      - onnxruntime
+      - imageio
+      - imageio-ffmpeg
+      - matplotlib
+      - pillow
+
+# Notes:
+# 1. This environment documents the main setup used for B/C generation.
+# 2. After creating the environment, clone threestudio and install its repo-specific requirements:
+#      pip install -r <threestudio_root>/requirements.txt --no-build-isolation
+#      pip install git+https://github.com/KAIR-BAIR/nerfacc.git@v0.5.2 --no-build-isolation
+# 3. tiny-cuda-nn, Zero123 weights and repo-specific fixes may still need to be installed manually.

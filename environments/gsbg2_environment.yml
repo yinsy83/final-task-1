@@ -1,0 +1,30 @@
+name: gsbg2
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - pip
+  - git
+  - cmake
+  - ninja
+  - glm
+  - pytorch
+  - torchvision
+  - torchaudio
+  - pytorch-cuda=12.4
+  - pip:
+      - plyfile
+      - tqdm
+      - pillow
+      - imageio
+      - imageio-ffmpeg
+
+# Notes:
+# 1. This environment documents the main setup used for background Gaussian Splatting.
+# 2. After cloning the Gaussian Splatting repository, install repo-local CUDA extensions manually, e.g.:
+#      pip install submodules/diff-gaussian-rasterization
+#      pip install submodules/simple-knn
+# 3. Depending on the machine, additional CUDA / compiler path fixes may still be required.
